@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pryValdezLP2
 {
@@ -16,16 +19,69 @@ namespace pryValdezLP2
         {
             InitializeComponent();
         }
+        public bool Click = false;
+        Point previousPoint;
 
         private void btnDibujar_Click(object sender, EventArgs e)
         {
-            
+            pctDibujo.Invalidate();
 
         }
 
-        private void pctDibujo_Click(object sender, EventArgs e)
-        {
 
+        private void pctDibujo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Click = true;
+            previousPoint = e.Location;
+        }
+
+        private void pctDibujo_MouseUp(object sender, MouseEventArgs e)
+        {
+            Click = false;
+        }
+
+        private void pctDibujo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Click == true)
+            {
+                using (Graphics g = pctDibujo.CreateGraphics())
+                {
+                    using (Pen pen = new Pen(Color.Black, 4))
+                    {
+                        g.DrawLine(pen, previousPoint, e.Location);
+                        previousPoint = e.Location;
+                    }
+                }
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string rutaCarpeta = Application.StartupPath;
+                string NombreArchivo = "Firma_"+ DateTime.Now.ToString("yyMMddHHmmss")+".jpg";
+                rutaCarpeta += NombreArchivo;
+
+                Bitmap bmp = new Bitmap(pctDibujo.Width, pctDibujo.Height);
+
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.CopyFromScreen(pctDibujo.PointToScreen(Point.Empty), Point.Empty, pctDibujo.Size);
+                }
+
+                bmp.Save(rutaCarpeta, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                MessageBox.Show("SE GUARDO PELOTUDO");
+                pctDibujo.Invalidate();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar la imagen" + ex.Message);
+                
+            }
         }
     }
 }

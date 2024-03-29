@@ -28,49 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MenuStripPrincipal = new System.Windows.Forms.MenuStrip();
-            this.juegoLibroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuStripPrincipal.SuspendLayout();
-            this.SuspendLayout();
+            MenuStripPrincipal = new MenuStrip();
+            juegoLibroToolStripMenuItem = new ToolStripMenuItem();
+            juegoToolStripMenuItem = new ToolStripMenuItem();
+            firmaDigitalToolStripMenuItem = new ToolStripMenuItem();
+            MenuStripPrincipal.SuspendLayout();
+            SuspendLayout();
             // 
             // MenuStripPrincipal
             // 
-            this.MenuStripPrincipal.BackColor = System.Drawing.Color.White;
-            this.MenuStripPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.juegoLibroToolStripMenuItem});
-            this.MenuStripPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.MenuStripPrincipal.Name = "MenuStripPrincipal";
-            this.MenuStripPrincipal.Size = new System.Drawing.Size(597, 24);
-            this.MenuStripPrincipal.TabIndex = 0;
-            this.MenuStripPrincipal.Text = "MenuStripPrincipal";
+            MenuStripPrincipal.BackColor = Color.White;
+            MenuStripPrincipal.Items.AddRange(new ToolStripItem[] { juegoLibroToolStripMenuItem });
+            MenuStripPrincipal.Location = new Point(0, 0);
+            MenuStripPrincipal.Name = "MenuStripPrincipal";
+            MenuStripPrincipal.Size = new Size(597, 24);
+            MenuStripPrincipal.TabIndex = 0;
+            MenuStripPrincipal.Text = "MenuStripPrincipal";
             // 
             // juegoLibroToolStripMenuItem
             // 
-            this.juegoLibroToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.juegoLibroToolStripMenuItem.Name = "juegoLibroToolStripMenuItem";
-            this.juegoLibroToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
-            this.juegoLibroToolStripMenuItem.Text = "Juego (Libro)";
-            this.juegoLibroToolStripMenuItem.Click += new System.EventHandler(this.juegoLibroToolStripMenuItem_Click);
+            juegoLibroToolStripMenuItem.BackColor = Color.White;
+            juegoLibroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { juegoToolStripMenuItem, firmaDigitalToolStripMenuItem });
+            juegoLibroToolStripMenuItem.Name = "juegoLibroToolStripMenuItem";
+            juegoLibroToolStripMenuItem.Size = new Size(50, 20);
+            juegoLibroToolStripMenuItem.Text = "Menu";
+            // 
+            // juegoToolStripMenuItem
+            // 
+            juegoToolStripMenuItem.Name = "juegoToolStripMenuItem";
+            juegoToolStripMenuItem.Size = new Size(180, 22);
+            juegoToolStripMenuItem.Text = "Juego";
+            juegoToolStripMenuItem.Click += juegoToolStripMenuItem_Click;
+            // 
+            // firmaDigitalToolStripMenuItem
+            // 
+            firmaDigitalToolStripMenuItem.Name = "firmaDigitalToolStripMenuItem";
+            firmaDigitalToolStripMenuItem.Size = new Size(180, 22);
+            firmaDigitalToolStripMenuItem.Text = "Firma Digital";
+            firmaDigitalToolStripMenuItem.Click += firmaDigitalToolStripMenuItem_Click;
             // 
             // frmMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 307);
-            this.Controls.Add(this.MenuStripPrincipal);
-            this.MainMenuStrip = this.MenuStripPrincipal;
-            this.Name = "frmMenuPrincipal";
-            this.Text = "Menu Principal";
-            this.MenuStripPrincipal.ResumeLayout(false);
-            this.MenuStripPrincipal.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(597, 307);
+            Controls.Add(MenuStripPrincipal);
+            MainMenuStrip = MenuStripPrincipal;
+            Name = "frmMenuPrincipal";
+            Text = "Menu Principal";
+            MenuStripPrincipal.ResumeLayout(false);
+            MenuStripPrincipal.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private MenuStrip MenuStripPrincipal;
         private ToolStripMenuItem juegoLibroToolStripMenuItem;
+        private ToolStripMenuItem juegoToolStripMenuItem;
+        private ToolStripMenuItem firmaDigitalToolStripMenuItem;
     }
 }

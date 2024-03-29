@@ -28,48 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDibujar = new System.Windows.Forms.Button();
-            this.pctDibujo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pctDibujo)).BeginInit();
-            this.SuspendLayout();
+            btnLimpiar = new Button();
+            pctDibujo = new PictureBox();
+            btnGuardar = new Button();
+            lblTitulo = new Label();
+            ((System.ComponentModel.ISupportInitialize)pctDibujo).BeginInit();
+            SuspendLayout();
             // 
-            // btnDibujar
+            // btnLimpiar
             // 
-            this.btnDibujar.Location = new System.Drawing.Point(24, 63);
-            this.btnDibujar.Name = "btnDibujar";
-            this.btnDibujar.Size = new System.Drawing.Size(105, 40);
-            this.btnDibujar.TabIndex = 0;
-            this.btnDibujar.Text = "Dibujar";
-            this.btnDibujar.UseVisualStyleBackColor = true;
-            this.btnDibujar.Click += new System.EventHandler(this.btnDibujar_Click);
+            btnLimpiar.Location = new Point(29, 110);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(105, 40);
+            btnLimpiar.TabIndex = 0;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnDibujar_Click;
             // 
             // pctDibujo
             // 
-            this.pctDibujo.BackColor = System.Drawing.Color.White;
-            this.pctDibujo.Location = new System.Drawing.Point(195, 63);
-            this.pctDibujo.Name = "pctDibujo";
-            this.pctDibujo.Size = new System.Drawing.Size(262, 296);
-            this.pctDibujo.TabIndex = 1;
-            this.pctDibujo.TabStop = false;
-            this.pctDibujo.Click += new System.EventHandler(this.pctDibujo_Click);
+            pctDibujo.BackColor = Color.White;
+            pctDibujo.Location = new Point(184, 110);
+            pctDibujo.Name = "pctDibujo";
+            pctDibujo.Size = new Size(304, 296);
+            pctDibujo.TabIndex = 1;
+            pctDibujo.TabStop = false;
+            pctDibujo.MouseDown += pctDibujo_MouseDown;
+            pctDibujo.MouseMove += pctDibujo_MouseMove;
+            pctDibujo.MouseUp += pctDibujo_MouseUp;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(29, 366);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(105, 40);
+            btnGuardar.TabIndex = 2;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(166, 24);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(185, 32);
+            lblTitulo.TabIndex = 3;
+            lblTitulo.Text = "Ingrese su firma";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmDibujo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 445);
-            this.Controls.Add(this.pctDibujo);
-            this.Controls.Add(this.btnDibujar);
-            this.Name = "frmDibujo";
-            this.Text = "Dibujo";
-            ((System.ComponentModel.ISupportInitialize)(this.pctDibujo)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(520, 445);
+            Controls.Add(lblTitulo);
+            Controls.Add(btnGuardar);
+            Controls.Add(pctDibujo);
+            Controls.Add(btnLimpiar);
+            Name = "frmDibujo";
+            Text = "Dibujo";
+            ((System.ComponentModel.ISupportInitialize)pctDibujo).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button btnDibujar;
+        private Button btnLimpiar;
         private PictureBox pctDibujo;
+        private Button btnGuardar;
+        private Label lblTitulo;
     }
 }

@@ -17,11 +17,18 @@ namespace pryValdezLP2
             InitializeComponent();
         }
 
-        private void juegoLibroToolStripMenuItem_Click(object sender, EventArgs e)
+        private void firmaDigitalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmDibujo frmDibujo = new frmDibujo();
             frmDibujo.Show();
+        }
+
+        private void juegoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmJuego frmJuego = new frmJuego();
+            frmJuego.Show();
         }
     }
 }
