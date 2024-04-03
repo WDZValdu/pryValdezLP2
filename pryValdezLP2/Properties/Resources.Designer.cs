@@ -63,9 +63,9 @@ namespace pryValdezLP2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Disparo {
+        internal static System.Drawing.Bitmap c0bec54a325111bd19f3b0b12c9edbcf__1_ {
             get {
-                object obj = ResourceManager.GetObject("Disparo", resourceCulture);
+                object obj = ResourceManager.GetObject("c0bec54a325111bd19f3b0b12c9edbcf (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,69 @@ namespace pryValdezLP2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Nave {
+        internal static System.Drawing.Bitmap c0bec54a325111bd19f3b0b12c9edbcf__1_1 {
             get {
-                object obj = ResourceManager.GetObject("Nave", resourceCulture);
+                object obj = ResourceManager.GetObject("c0bec54a325111bd19f3b0b12c9edbcf (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Disparo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Disparo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Disparo__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Disparo (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Enemigo {
+            get {
+                object obj = ResourceManager.GetObject("Enemigo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo {
+            get {
+                object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NaveSinFondo {
+            get {
+                object obj = ResourceManager.GetObject("NaveSinFondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pxsprite_space {
+            get {
+                object obj = ResourceManager.GetObject("pxsprite-space", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
