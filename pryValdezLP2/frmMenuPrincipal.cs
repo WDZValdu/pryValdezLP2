@@ -30,5 +30,11 @@ namespace pryValdezLP2
             frmJuego frmJuego = new frmJuego();
             frmJuego.Show();
         }
+
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            clsConexionBD objBD = new clsConexionBD();
+            objBD.ConectarBD(lblStatus);
+        }
     }
 }

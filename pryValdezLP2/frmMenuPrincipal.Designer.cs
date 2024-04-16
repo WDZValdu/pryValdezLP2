@@ -32,6 +32,7 @@
             juegoLibroToolStripMenuItem = new ToolStripMenuItem();
             juegoToolStripMenuItem = new ToolStripMenuItem();
             firmaDigitalToolStripMenuItem = new ToolStripMenuItem();
+            lblStatus = new Label();
             MenuStripPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,26 +57,37 @@
             // juegoToolStripMenuItem
             // 
             juegoToolStripMenuItem.Name = "juegoToolStripMenuItem";
-            juegoToolStripMenuItem.Size = new Size(180, 22);
+            juegoToolStripMenuItem.Size = new Size(141, 22);
             juegoToolStripMenuItem.Text = "Juego";
             juegoToolStripMenuItem.Click += juegoToolStripMenuItem_Click;
             // 
             // firmaDigitalToolStripMenuItem
             // 
             firmaDigitalToolStripMenuItem.Name = "firmaDigitalToolStripMenuItem";
-            firmaDigitalToolStripMenuItem.Size = new Size(180, 22);
+            firmaDigitalToolStripMenuItem.Size = new Size(141, 22);
             firmaDigitalToolStripMenuItem.Text = "Firma Digital";
             firmaDigitalToolStripMenuItem.Click += firmaDigitalToolStripMenuItem_Click;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(12, 283);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(38, 15);
+            lblStatus.TabIndex = 1;
+            lblStatus.Text = "label1";
             // 
             // frmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(597, 307);
+            Controls.Add(lblStatus);
             Controls.Add(MenuStripPrincipal);
             MainMenuStrip = MenuStripPrincipal;
             Name = "frmMenuPrincipal";
             Text = "Menu Principal";
+            Load += frmMenuPrincipal_Load;
             MenuStripPrincipal.ResumeLayout(false);
             MenuStripPrincipal.PerformLayout();
             ResumeLayout(false);
@@ -88,5 +100,6 @@
         private ToolStripMenuItem juegoLibroToolStripMenuItem;
         private ToolStripMenuItem juegoToolStripMenuItem;
         private ToolStripMenuItem firmaDigitalToolStripMenuItem;
+        private Label lblStatus;
     }
 }
