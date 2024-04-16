@@ -63,6 +63,16 @@ namespace pryValdezLP2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3iCN {
+            get {
+                object obj = ResourceManager.GetObject("3iCN", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap c0bec54a325111bd19f3b0b12c9edbcf__1_ {
             get {
                 object obj = ResourceManager.GetObject("c0bec54a325111bd19f3b0b12c9edbcf (1)", resourceCulture);

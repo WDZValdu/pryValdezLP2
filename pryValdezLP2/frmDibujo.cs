@@ -50,6 +50,7 @@ namespace pryValdezLP2
                     {
                         g.DrawLine(pen, previousPoint, e.Location);
                         previousPoint = e.Location;
+                        
                     }
                 }
             }

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace pryValdezLP2
 {
-    internal class clsEnemigos
+    public class clsEnemigos
     {
-        private System.Windows.Forms.Timer timerEnemigos = new System.Windows.Forms.Timer();
+        public System.Windows.Forms.Timer timerEnemigos = new System.Windows.Forms.Timer();
         public List<PictureBox> listaEnemigos = new List<PictureBox>(); // Lista para almacenar los enemigos
+        
         public clsEnemigos()
         {
             timerEnemigos.Interval = 20; // Puedes ajustar el intervalo según la velocidad deseada
@@ -26,12 +27,12 @@ namespace pryValdezLP2
                 }
             }
         }
-       
+
         public void Enemigo(frmJuego frmJuego)
         {
             PictureBox pctEnemigo = new PictureBox();
             Random random = new Random();
-            int rndX = random.Next(0, 821);
+            int rndX = random.Next(0, 820);
 
             pctEnemigo.Image = pryValdezLP2.Properties.Resources.Enemigo;
             pctEnemigo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -41,7 +42,7 @@ namespace pryValdezLP2
             frmJuego.Controls.Add(pctEnemigo);
             listaEnemigos.Add(pctEnemigo);
             pctEnemigo.BringToFront();
-            
+
             timerEnemigos.Start();
 
         }
