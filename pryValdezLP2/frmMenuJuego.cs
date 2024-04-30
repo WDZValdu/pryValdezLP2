@@ -16,5 +16,19 @@ namespace pryValdezLP2
         {
             InitializeComponent();
         }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenuPrincipal frmMenuPrincipal = new frmMenuPrincipal();
+            frmMenuPrincipal.ShowDialog();
+        }
+
+        private void btnJugar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmJuego frmJuego = new frmJuego();
+            frmJuego.ShowDialog();
+        }
     }
 }
