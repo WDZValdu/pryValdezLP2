@@ -32,6 +32,8 @@
             pictureBox1 = new PictureBox();
             lblScore = new Label();
             panel = new Panel();
+            lblPuntos = new Label();
+            lblPlayer = new Label();
             label1 = new Label();
             btnReanudar = new Button();
             btnReiniciar = new Button();
@@ -79,15 +81,39 @@
             // panel
             // 
             panel.BackColor = Color.Black;
+            panel.Controls.Add(lblPuntos);
+            panel.Controls.Add(lblPlayer);
             panel.Controls.Add(label1);
             panel.Controls.Add(btnReanudar);
             panel.Controls.Add(btnReiniciar);
             panel.Controls.Add(btnMenuPrincipal);
             panel.Location = new Point(309, 100);
             panel.Name = "panel";
-            panel.Size = new Size(342, 360);
+            panel.Size = new Size(342, 392);
             panel.TabIndex = 3;
             panel.Visible = false;
+            // 
+            // lblPuntos
+            // 
+            lblPuntos.AutoSize = true;
+            lblPuntos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPuntos.ForeColor = Color.White;
+            lblPuntos.Location = new Point(190, 91);
+            lblPuntos.Name = "lblPuntos";
+            lblPuntos.Size = new Size(32, 25);
+            lblPuntos.TabIndex = 5;
+            lblPuntos.Text = "10";
+            // 
+            // lblPlayer
+            // 
+            lblPlayer.AutoSize = true;
+            lblPlayer.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPlayer.ForeColor = Color.White;
+            lblPlayer.Location = new Point(116, 91);
+            lblPlayer.Name = "lblPlayer";
+            lblPlayer.Size = new Size(68, 25);
+            lblPlayer.TabIndex = 4;
+            lblPlayer.Text = "Player:";
             // 
             // label1
             // 
@@ -105,7 +131,7 @@
             btnReanudar.BackColor = Color.Black;
             btnReanudar.FlatStyle = FlatStyle.Flat;
             btnReanudar.ForeColor = Color.White;
-            btnReanudar.Location = new Point(29, 109);
+            btnReanudar.Location = new Point(29, 147);
             btnReanudar.Name = "btnReanudar";
             btnReanudar.Size = new Size(287, 50);
             btnReanudar.TabIndex = 2;
@@ -118,7 +144,7 @@
             btnReiniciar.BackColor = Color.Black;
             btnReiniciar.FlatStyle = FlatStyle.Flat;
             btnReiniciar.ForeColor = Color.White;
-            btnReiniciar.Location = new Point(29, 190);
+            btnReiniciar.Location = new Point(29, 228);
             btnReiniciar.Name = "btnReiniciar";
             btnReiniciar.Size = new Size(287, 50);
             btnReiniciar.TabIndex = 1;
@@ -131,7 +157,7 @@
             btnMenuPrincipal.BackColor = Color.Black;
             btnMenuPrincipal.FlatStyle = FlatStyle.Flat;
             btnMenuPrincipal.ForeColor = Color.White;
-            btnMenuPrincipal.Location = new Point(29, 271);
+            btnMenuPrincipal.Location = new Point(29, 309);
             btnMenuPrincipal.Name = "btnMenuPrincipal";
             btnMenuPrincipal.Size = new Size(287, 50);
             btnMenuPrincipal.TabIndex = 0;
@@ -143,12 +169,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackgroundImage = Properties.Resources.fondo;
             ClientSize = new Size(920, 550);
             Controls.Add(panel);
             Controls.Add(lblScore);
             Controls.Add(pctNave);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmJuego";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Juego";
@@ -171,5 +199,7 @@
         private Button btnReanudar;
         private Button btnReiniciar;
         private Label label1;
+        private Label lblPuntos;
+        private Label lblPlayer;
     }
 }

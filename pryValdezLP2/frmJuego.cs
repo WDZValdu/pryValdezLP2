@@ -26,24 +26,26 @@ namespace pryValdezLP2
         {
             InitializeComponent();
             pctNave.BackColor = Color.Transparent;
-            timerEnemigos.Interval = 2500; 
+            timerEnemigos.Interval = 2500;
             timerEnemigos.Tick += timerEnemigos_Tick;
             timerEnemigos.Start();
             timerBola.Start();
-            timerBola.Interval = 2; 
+            timerBola.Interval = 2;
             timerBola.Tick += TimerBola_Tick;
-             
+
         }
 
         private void timerEnemigos_Tick(object sender, EventArgs e)
         {
             objEnemigos.Enemigo(this);
         }
-       
+
         private void frmJuego_KeyDown(object sender, KeyEventArgs e)
         {
-
-            objPlayer.Controles(pctNave, e, this);
+            if (escape == false)
+            {
+                objPlayer.Controles(pctNave, e, this);
+            }
 
             if (e.KeyCode == Keys.Escape)
             {
@@ -124,12 +126,14 @@ namespace pryValdezLP2
 
         private void btnReanudar_Click(object sender, EventArgs e)
         {
-            escape = false;
+
             panel.Visible = false;
             timerBola.Start();
             timerEnemigos.Start();
             objEnemigos.timerEnemigos.Start();
             objPlayer.timerBola.Start();
+            escape = false;
+            this.Focus();
 
         }
 
