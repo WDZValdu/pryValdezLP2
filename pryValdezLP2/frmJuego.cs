@@ -147,8 +147,8 @@ namespace pryValdezLP2
         private void btnMenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmMenuPrincipal frmMenuPrincipal = new frmMenuPrincipal();
-            frmMenuPrincipal.ShowDialog();
+            frmMenuJuego frmMenuJuego = new frmMenuJuego();
+            frmMenuJuego.ShowDialog();
         }
     }
 }
