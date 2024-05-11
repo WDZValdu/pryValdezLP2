@@ -100,6 +100,7 @@
             Controls.Add(pctDibujo);
             Controls.Add(btnLimpiar);
             Name = "frmDibujo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dibujo";
             ((System.ComponentModel.ISupportInitialize)pctDibujo).EndInit();
             ResumeLayout(false);

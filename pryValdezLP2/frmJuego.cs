@@ -34,6 +34,7 @@ namespace pryValdezLP2
             timerBola.Start();
             timerBola.Interval = 2;
             timerBola.Tick += TimerBola_Tick;
+            lblPlayer.Text = NamePlayer + " :";
 
         }
 
@@ -93,6 +94,16 @@ namespace pryValdezLP2
                             Score += 1;
                             //Vel += 500;
                             lblScore.Text = "Score: " + Score.ToString();
+                            lblPuntos.Text = Score.ToString();
+                            if (timerEnemigos.Interval > 100)
+                            {
+                                timerEnemigos.Interval -= 75;
+                            }
+                            else
+                            {
+                                lblDificultad.Visible=true;
+                            }
+                            
                             objEnemigos.listaEnemigos.Remove(Enemigo);
                             objPlayer.listaBolas.Remove(Bola);
                         }

@@ -38,6 +38,7 @@
             btnReanudar = new Button();
             btnReiniciar = new Button();
             btnMenuPrincipal = new Button();
+            lblDificultad = new Label();
             ((System.ComponentModel.ISupportInitialize)pctNave).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel.SuspendLayout();
@@ -98,18 +99,18 @@
             lblPuntos.AutoSize = true;
             lblPuntos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblPuntos.ForeColor = Color.White;
-            lblPuntos.Location = new Point(190, 91);
+            lblPuntos.Location = new Point(251, 91);
             lblPuntos.Name = "lblPuntos";
-            lblPuntos.Size = new Size(32, 25);
+            lblPuntos.Size = new Size(22, 25);
             lblPuntos.TabIndex = 5;
-            lblPuntos.Text = "10";
+            lblPuntos.Text = "0";
             // 
             // lblPlayer
             // 
             lblPlayer.AutoSize = true;
             lblPlayer.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblPlayer.ForeColor = Color.White;
-            lblPlayer.Location = new Point(116, 91);
+            lblPlayer.Location = new Point(29, 91);
             lblPlayer.Name = "lblPlayer";
             lblPlayer.Size = new Size(68, 25);
             lblPlayer.TabIndex = 4;
@@ -165,6 +166,19 @@
             btnMenuPrincipal.UseVisualStyleBackColor = false;
             btnMenuPrincipal.Click += btnMenuPrincipal_Click;
             // 
+            // lblDificultad
+            // 
+            lblDificultad.AutoSize = true;
+            lblDificultad.BackColor = Color.Transparent;
+            lblDificultad.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDificultad.ForeColor = Color.IndianRed;
+            lblDificultad.Location = new Point(764, 9);
+            lblDificultad.Name = "lblDificultad";
+            lblDificultad.Size = new Size(131, 20);
+            lblDificultad.TabIndex = 4;
+            lblDificultad.Text = "Maxima Dificultad";
+            lblDificultad.Visible = false;
+            // 
             // frmJuego
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -172,6 +186,7 @@
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackgroundImage = Properties.Resources.fondo;
             ClientSize = new Size(920, 550);
+            Controls.Add(lblDificultad);
             Controls.Add(panel);
             Controls.Add(lblScore);
             Controls.Add(pctNave);
@@ -201,5 +216,6 @@
         private Label label1;
         private Label lblPuntos;
         private Label lblPlayer;
+        private Label lblDificultad;
     }
 }

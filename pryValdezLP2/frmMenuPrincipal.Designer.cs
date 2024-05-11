@@ -86,6 +86,7 @@
             Controls.Add(MenuStripPrincipal);
             MainMenuStrip = MenuStripPrincipal;
             Name = "frmMenuPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu Principal";
             Load += frmMenuPrincipal_Load;
             MenuStripPrincipal.ResumeLayout(false);

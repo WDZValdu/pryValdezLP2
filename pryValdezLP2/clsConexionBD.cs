@@ -24,7 +24,7 @@ namespace pryValdezLP2
             try
             {
 
-                string CadenaConexion = "Server = LocalHost;" + "Database = JuegoRol;"+ "Uid = root;" + "Pwd = ;";
+                string CadenaConexion = "Server = LocalHost;" + "Database = juegorol;"+ "Uid = root;" + "Pwd = ;";
                
                 MySqlConnection conn = new MySqlConnection(CadenaConexion);
                 conn.Open();               
