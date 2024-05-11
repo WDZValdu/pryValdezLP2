@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,16 +16,17 @@ namespace pryValdezLP2
     {
         private System.Windows.Forms.Timer timerEnemigos = new System.Windows.Forms.Timer();
         private System.Windows.Forms.Timer timerBola = new System.Windows.Forms.Timer();
-
+        public String NamePlayer;
         clsPlayer objPlayer = new clsPlayer();
         clsEnemigos objEnemigos = new clsEnemigos();
         public bool escape = false;
         Int32 Score = 0;
         //Int32 Vel =0;
 
-        public frmJuego()
+        public frmJuego(String player)
         {
             InitializeComponent();
+            NamePlayer = player;
             pctNave.BackColor = Color.Transparent;
             timerEnemigos.Interval = 2500;
             timerEnemigos.Tick += timerEnemigos_Tick;
@@ -140,7 +142,7 @@ namespace pryValdezLP2
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmJuego frmJuego = new frmJuego();
+            frmJuego frmJuego = new frmJuego(NamePlayer);
             frmJuego.ShowDialog();
         }
 

@@ -50,7 +50,7 @@ namespace pryValdezLP2
                     {
                         g.DrawLine(pen, previousPoint, e.Location);
                         previousPoint = e.Location;
-                        
+
                     }
                 }
             }
@@ -60,8 +60,8 @@ namespace pryValdezLP2
         {
             try
             {
-                string rutaCarpeta = Application.StartupPath;
-                string NombreArchivo = "Firma_"+ DateTime.Now.ToString("yyMMddHHmmss")+".jpg";
+                string rutaCarpeta = Application.StartupPath + "Firmas\\";
+                string NombreArchivo = "Firma_"+ DateTime.Now.ToString("yy-MM-dd-HH-mm-ss")+".jpg";
                 rutaCarpeta += NombreArchivo;
 
                 Bitmap bmp = new Bitmap(pctDibujo.Width, pctDibujo.Height);
@@ -73,7 +73,7 @@ namespace pryValdezLP2
 
                 bmp.Save(rutaCarpeta, System.Drawing.Imaging.ImageFormat.Jpeg);
 
-                MessageBox.Show("SE GUARDO PELOTUDO");
+                MessageBox.Show("SU FIRMA SE GUARDO CORRECTAMENTE");
                 pctDibujo.Invalidate();
 
 
@@ -81,8 +81,15 @@ namespace pryValdezLP2
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar la imagen" + ex.Message);
-                
+
             }
+        }
+
+        private void btnMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMenuPrincipal frmMenuPrincipal = new frmMenuPrincipal();
+            frmMenuPrincipal.Show();
         }
     }
 }

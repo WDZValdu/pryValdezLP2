@@ -27,7 +27,7 @@ namespace pryValdezLP2
         private void btnJugar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmJuego frmJuego = new frmJuego();
+            frmJuego frmJuego = new frmJuego(txtPlayer.Text);
             frmJuego.ShowDialog();
         }
     }

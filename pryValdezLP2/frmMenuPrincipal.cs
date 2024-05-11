@@ -27,8 +27,8 @@ namespace pryValdezLP2
         private void juegoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmJuego frmJuego = new frmJuego();
-            frmJuego.Show();
+            frmMenuJuego frmMenuJuego = new frmMenuJuego();
+            frmMenuJuego.Show();
         }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)

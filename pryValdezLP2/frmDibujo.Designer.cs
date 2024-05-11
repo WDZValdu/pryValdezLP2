@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnLimpiar = new Button();
             pctDibujo = new PictureBox();
             btnGuardar = new Button();
             lblTitulo = new Label();
+            btnLimpiar = new Button();
+            btnMenuPrincipal = new Button();
             ((System.ComponentModel.ISupportInitialize)pctDibujo).BeginInit();
             SuspendLayout();
-            // 
-            // btnLimpiar
-            // 
-            btnLimpiar.Location = new Point(29, 110);
-            btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(105, 40);
-            btnLimpiar.TabIndex = 0;
-            btnLimpiar.Text = "Limpiar";
-            btnLimpiar.UseVisualStyleBackColor = true;
-            btnLimpiar.Click += btnDibujar_Click;
             // 
             // pctDibujo
             // 
@@ -78,11 +69,32 @@
             lblTitulo.Text = "Ingrese su firma";
             lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnLimpiar
+            // 
+            btnLimpiar.Location = new Point(29, 110);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(105, 40);
+            btnLimpiar.TabIndex = 0;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnDibujar_Click;
+            // 
+            // btnMenuPrincipal
+            // 
+            btnMenuPrincipal.Location = new Point(29, 308);
+            btnMenuPrincipal.Name = "btnMenuPrincipal";
+            btnMenuPrincipal.Size = new Size(105, 40);
+            btnMenuPrincipal.TabIndex = 4;
+            btnMenuPrincipal.Text = "Menu Principal";
+            btnMenuPrincipal.UseVisualStyleBackColor = true;
+            btnMenuPrincipal.Click += btnMenuPrincipal_Click;
+            // 
             // frmDibujo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(520, 445);
+            Controls.Add(btnMenuPrincipal);
             Controls.Add(lblTitulo);
             Controls.Add(btnGuardar);
             Controls.Add(pctDibujo);
@@ -95,10 +107,10 @@
         }
 
         #endregion
-
-        private Button btnLimpiar;
         private PictureBox pctDibujo;
         private Button btnGuardar;
         private Label lblTitulo;
+        private Button btnLimpiar;
+        private Button btnMenuPrincipal;
     }
 }
