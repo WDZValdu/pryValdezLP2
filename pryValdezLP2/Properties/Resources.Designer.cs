@@ -133,6 +133,16 @@ namespace pryValdezLP2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fxVE {
+            get {
+                object obj = ResourceManager.GetObject("fxVE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NaveSinFondo {
             get {
                 object obj = ResourceManager.GetObject("NaveSinFondo", resourceCulture);

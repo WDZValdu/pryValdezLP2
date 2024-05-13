@@ -34,7 +34,7 @@ namespace pryValdezLP2
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
             clsConexionBD objBD = new clsConexionBD();
-            objBD.ConectarBD(lblStatus);
+            objBD.ConectarBD_Nave(lblStatus);
         }
     }
 }

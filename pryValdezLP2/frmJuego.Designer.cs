@@ -34,11 +34,12 @@
             panel = new Panel();
             lblPuntos = new Label();
             lblPlayer = new Label();
-            label1 = new Label();
+            lblPausa = new Label();
             btnReanudar = new Button();
             btnReiniciar = new Button();
             btnMenuPrincipal = new Button();
             lblDificultad = new Label();
+            lblVida = new Label();
             ((System.ComponentModel.ISupportInitialize)pctNave).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel.SuspendLayout();
@@ -84,7 +85,7 @@
             panel.BackColor = Color.Black;
             panel.Controls.Add(lblPuntos);
             panel.Controls.Add(lblPlayer);
-            panel.Controls.Add(label1);
+            panel.Controls.Add(lblPausa);
             panel.Controls.Add(btnReanudar);
             panel.Controls.Add(btnReiniciar);
             panel.Controls.Add(btnMenuPrincipal);
@@ -99,7 +100,7 @@
             lblPuntos.AutoSize = true;
             lblPuntos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblPuntos.ForeColor = Color.White;
-            lblPuntos.Location = new Point(251, 91);
+            lblPuntos.Location = new Point(197, 91);
             lblPuntos.Name = "lblPuntos";
             lblPuntos.Size = new Size(22, 25);
             lblPuntos.TabIndex = 5;
@@ -107,25 +108,25 @@
             // 
             // lblPlayer
             // 
-            lblPlayer.AutoSize = true;
             lblPlayer.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblPlayer.ForeColor = Color.White;
-            lblPlayer.Location = new Point(29, 91);
+            lblPlayer.Location = new Point(43, 91);
             lblPlayer.Name = "lblPlayer";
-            lblPlayer.Size = new Size(68, 25);
+            lblPlayer.Size = new Size(148, 25);
             lblPlayer.TabIndex = 4;
             lblPlayer.Text = "Player:";
+            lblPlayer.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblPausa
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(87, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(172, 65);
-            label1.TabIndex = 3;
-            label1.Text = "PAUSA";
+            lblPausa.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPausa.ForeColor = Color.White;
+            lblPausa.Location = new Point(3, 13);
+            lblPausa.Name = "lblPausa";
+            lblPausa.Size = new Size(336, 65);
+            lblPausa.TabIndex = 3;
+            lblPausa.Text = "PAUSA";
+            lblPausa.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnReanudar
             // 
@@ -179,6 +180,18 @@
             lblDificultad.Text = "Maxima Dificultad";
             lblDificultad.Visible = false;
             // 
+            // lblVida
+            // 
+            lblVida.AutoSize = true;
+            lblVida.BackColor = Color.Transparent;
+            lblVida.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblVida.ForeColor = Color.White;
+            lblVida.Location = new Point(90, 9);
+            lblVida.Name = "lblVida";
+            lblVida.Size = new Size(60, 20);
+            lblVida.TabIndex = 5;
+            lblVida.Text = "Vidas: 3";
+            // 
             // frmJuego
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -186,6 +199,7 @@
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackgroundImage = Properties.Resources.fondo;
             ClientSize = new Size(920, 550);
+            Controls.Add(lblVida);
             Controls.Add(lblDificultad);
             Controls.Add(panel);
             Controls.Add(lblScore);
@@ -213,9 +227,10 @@
         private Button btnMenuPrincipal;
         private Button btnReanudar;
         private Button btnReiniciar;
-        private Label label1;
+        private Label lblPausa;
         private Label lblPuntos;
         private Label lblPlayer;
         private Label lblDificultad;
+        private Label lblVida;
     }
 }

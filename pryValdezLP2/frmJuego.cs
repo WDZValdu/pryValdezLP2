@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Crypto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,13 @@ namespace pryValdezLP2
     {
         private System.Windows.Forms.Timer timerEnemigos = new System.Windows.Forms.Timer();
         private System.Windows.Forms.Timer timerBola = new System.Windows.Forms.Timer();
+        
         public String NamePlayer;
         clsPlayer objPlayer = new clsPlayer();
         clsEnemigos objEnemigos = new clsEnemigos();
+        clsConexionBD objConexion = new clsConexionBD();
         public bool escape = false;
-        Int32 Score = 0;
+        Int32 Score = 0; 
         //Int32 Vel =0;
 
         public frmJuego(String player)
@@ -35,7 +38,50 @@ namespace pryValdezLP2
             timerBola.Interval = 2;
             timerBola.Tick += TimerBola_Tick;
             lblPlayer.Text = NamePlayer + " :";
+            colisionNave();
+            lblVida.Text = "Vidas: " + objPlayer.Vidas;
+        }
 
+        public void colisionNave()
+        {
+            System.Windows.Forms.Timer timerColision = new System.Windows.Forms.Timer();
+            timerColision.Interval = 200;
+
+            timerColision.Tick += (sender, arges) =>
+            {
+                foreach (var Enemigo in objEnemigos.listaEnemigos.ToList())
+                {
+
+                    if (pctNave.Bounds.IntersectsWith(Enemigo.Bounds))
+                    {                   
+                        objPlayer.Vidas -= 1;
+                        Enemigo.Visible = false;
+                        objEnemigos.listaEnemigos.Remove(Enemigo);
+                        Enemigo.Dispose();
+                        lblVida.Text= "Vidas: " + objPlayer.Vidas;
+                        
+                        if (objPlayer.Vidas <=0)
+                        {
+                            
+                            panel.BringToFront();
+                            timerBola.Stop();
+                            timerEnemigos.Stop();
+                            objEnemigos.timerEnemigos.Stop();
+                            objPlayer.timerBola.Stop();
+                            escape = true;
+                            lblPausa.Text="GAME OVER";
+                            panel.Visible = true;
+                            btnReanudar.Enabled = false;
+                            //cargo un registro en la base
+                            objConexion.CargarScore(NamePlayer,Score);
+
+                            
+                            MessageBox.Show("Sin Vida, puntaje guardado");
+                        }
+                    }
+                }
+            };
+            timerColision.Start();
         }
 
         private void timerEnemigos_Tick(object sender, EventArgs e)
@@ -48,6 +94,7 @@ namespace pryValdezLP2
             if (escape == false)
             {
                 objPlayer.Controles(pctNave, e, this);
+                
             }
 
             if (e.KeyCode == Keys.Escape)
@@ -84,6 +131,7 @@ namespace pryValdezLP2
                     // Verificar colisión con los enemigos
                     foreach (var Enemigo in objEnemigos.listaEnemigos.ToList())
                     {
+                        
                         if (Bola.Bounds.IntersectsWith(Enemigo.Bounds))
                         {
 

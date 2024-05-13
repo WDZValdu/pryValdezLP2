@@ -30,5 +30,19 @@ namespace pryValdezLP2
             frmJuego frmJuego = new frmJuego(txtPlayer.Text);
             frmJuego.ShowDialog();
         }
+
+        private void btnBestiario_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmBestiario frmBestiario = new frmBestiario();
+            frmBestiario.ShowDialog();
+        }
+
+        private void btnScores_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMejoresJugadores frmMejoresJugadores = new frmMejoresJugadores();
+            frmMejoresJugadores.ShowDialog();
+        }
     }
 }

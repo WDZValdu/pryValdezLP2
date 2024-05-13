@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Crypto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,19 +12,24 @@ namespace pryValdezLP2
         public System.Windows.Forms.Timer timerEnemigos = new System.Windows.Forms.Timer();
         public List<PictureBox> listaEnemigos = new List<PictureBox>(); // Lista para almacenar los enemigos
         
+
         public clsEnemigos()
         {
-            timerEnemigos.Interval = 20; // Puedes ajustar el intervalo según la velocidad deseada
+            timerEnemigos.Interval = 18; // ajustar el intervalo según la velocidad deseada
             timerEnemigos.Tick += timerEnemigos_Tick;
+            
         }
 
+        
         private void timerEnemigos_Tick(object sender, EventArgs e)
-        {
+        {            
             foreach (var pctEnemigo in listaEnemigos)
-            {
+            {   
+                
                 if (pctEnemigo != null)
                 {
                     pctEnemigo.Top += 4;
+
                 }
             }
         }

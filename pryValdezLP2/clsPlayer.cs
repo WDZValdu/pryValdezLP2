@@ -11,7 +11,8 @@ namespace pryValdezLP2
         public System.Windows.Forms.Timer timerBola = new System.Windows.Forms.Timer();
         public List<PictureBox> listaBolas = new List<PictureBox>(); // Lista para almacenar las bolas
         public clsEnemigos objEnemigos = new clsEnemigos();
-
+        public Int32 Vidas = 3;
+        
         public void Controles(PictureBox nave, KeyEventArgs Tecla, frmJuego frmJuego)
         {
             PictureBox pctNave = nave;
@@ -37,6 +38,7 @@ namespace pryValdezLP2
             {
                 Disparo(pctNave, frmJuego);
             }
+            
         }
 
         public void Disparo(PictureBox nave, frmJuego frmJuego)
