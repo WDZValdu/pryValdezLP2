@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
 
 namespace pryValdezLP2
 {
@@ -60,22 +61,50 @@ namespace pryValdezLP2
         {
             try
             {
-                string rutaCarpeta = Application.StartupPath + "Firmas\\";
-                string NombreArchivo = "Firma_"+ DateTime.Now.ToString("yy-MM-dd-HH-mm-ss")+".jpg";
-                rutaCarpeta += NombreArchivo;
+                string rutaDir = Application.StartupPath + "Firmas";
 
-                Bitmap bmp = new Bitmap(pctDibujo.Width, pctDibujo.Height);
-
-                using (Graphics g = Graphics.FromImage(bmp))
+                if (Directory.Exists(rutaDir))
                 {
-                    g.CopyFromScreen(pctDibujo.PointToScreen(Point.Empty), Point.Empty, pctDibujo.Size);
+                    string rutaCarpeta = Application.StartupPath + "Firmas\\";
+                    string NombreArchivo = "Firma_" + DateTime.Now.ToString("yy-MM-dd-HH-mm-ss") + ".jpg";
+                    rutaCarpeta += NombreArchivo;
+
+                    Bitmap bmp = new Bitmap(pctDibujo.Width, pctDibujo.Height);
+
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        g.CopyFromScreen(pctDibujo.PointToScreen(Point.Empty), Point.Empty, pctDibujo.Size);
+                    }
+
+                    bmp.Save(rutaCarpeta, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    MessageBox.Show("SU FIRMA SE GUARDO CORRECTAMENTE");
+                    pctDibujo.Invalidate();
+
+                }
+                else
+                {
+                    Directory.CreateDirectory(rutaDir);
+                    MessageBox.Show("La carpeta Firmas no existe, se creara una nueva");
+                    string rutaCarpeta = Application.StartupPath + "Firmas\\";
+                    string NombreArchivo = "Firma_" + DateTime.Now.ToString("yy-MM-dd-HH-mm-ss") + ".jpg";
+                    rutaCarpeta += NombreArchivo;
+
+                    Bitmap bmp = new Bitmap(pctDibujo.Width, pctDibujo.Height);
+
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        g.CopyFromScreen(pctDibujo.PointToScreen(Point.Empty), Point.Empty, pctDibujo.Size);
+                    }
+
+                    bmp.Save(rutaCarpeta, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    MessageBox.Show("SU FIRMA SE GUARDO CORRECTAMENTE");
+                    pctDibujo.Invalidate();
                 }
 
-                bmp.Save(rutaCarpeta, System.Drawing.Imaging.ImageFormat.Jpeg);
 
-                MessageBox.Show("SU FIRMA SE GUARDO CORRECTAMENTE");
-                pctDibujo.Invalidate();
-
+                
 
             }
             catch (Exception ex)
