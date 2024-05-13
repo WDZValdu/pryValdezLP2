@@ -32,17 +32,21 @@
             pictureBox1 = new PictureBox();
             lblScore = new Label();
             panel = new Panel();
-            lblPuntos = new Label();
             lblPlayer = new Label();
             lblPausa = new Label();
             btnReanudar = new Button();
             btnReiniciar = new Button();
             btnMenuPrincipal = new Button();
             lblDificultad = new Label();
-            lblVida = new Label();
+            pctVida1 = new PictureBox();
+            pctVida2 = new PictureBox();
+            pctVida3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pctNave).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pctVida1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctVida2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctVida3).BeginInit();
             SuspendLayout();
             // 
             // pctNave
@@ -83,7 +87,6 @@
             // panel
             // 
             panel.BackColor = Color.Black;
-            panel.Controls.Add(lblPuntos);
             panel.Controls.Add(lblPlayer);
             panel.Controls.Add(lblPausa);
             panel.Controls.Add(btnReanudar);
@@ -95,24 +98,13 @@
             panel.TabIndex = 3;
             panel.Visible = false;
             // 
-            // lblPuntos
-            // 
-            lblPuntos.AutoSize = true;
-            lblPuntos.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPuntos.ForeColor = Color.White;
-            lblPuntos.Location = new Point(197, 91);
-            lblPuntos.Name = "lblPuntos";
-            lblPuntos.Size = new Size(22, 25);
-            lblPuntos.TabIndex = 5;
-            lblPuntos.Text = "0";
-            // 
             // lblPlayer
             // 
             lblPlayer.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblPlayer.ForeColor = Color.White;
-            lblPlayer.Location = new Point(43, 91);
+            lblPlayer.Location = new Point(29, 90);
             lblPlayer.Name = "lblPlayer";
-            lblPlayer.Size = new Size(148, 25);
+            lblPlayer.Size = new Size(287, 25);
             lblPlayer.TabIndex = 4;
             lblPlayer.Text = "Player:";
             lblPlayer.TextAlign = ContentAlignment.MiddleCenter;
@@ -173,24 +165,45 @@
             lblDificultad.BackColor = Color.Transparent;
             lblDificultad.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblDificultad.ForeColor = Color.IndianRed;
-            lblDificultad.Location = new Point(764, 9);
+            lblDificultad.Location = new Point(777, 9);
             lblDificultad.Name = "lblDificultad";
             lblDificultad.Size = new Size(131, 20);
             lblDificultad.TabIndex = 4;
             lblDificultad.Text = "Maxima Dificultad";
             lblDificultad.Visible = false;
             // 
-            // lblVida
+            // pctVida1
             // 
-            lblVida.AutoSize = true;
-            lblVida.BackColor = Color.Transparent;
-            lblVida.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblVida.ForeColor = Color.White;
-            lblVida.Location = new Point(90, 9);
-            lblVida.Name = "lblVida";
-            lblVida.Size = new Size(60, 20);
-            lblVida.TabIndex = 5;
-            lblVida.Text = "Vidas: 3";
+            pctVida1.BackColor = Color.Transparent;
+            pctVida1.Image = Properties.Resources.pixel_heart;
+            pctVida1.Location = new Point(409, 4);
+            pctVida1.Name = "pctVida1";
+            pctVida1.Size = new Size(41, 40);
+            pctVida1.SizeMode = PictureBoxSizeMode.Zoom;
+            pctVida1.TabIndex = 6;
+            pctVida1.TabStop = false;
+            // 
+            // pctVida2
+            // 
+            pctVida2.BackColor = Color.Transparent;
+            pctVida2.Image = Properties.Resources.pixel_heart;
+            pctVida2.Location = new Point(456, 4);
+            pctVida2.Name = "pctVida2";
+            pctVida2.Size = new Size(41, 40);
+            pctVida2.SizeMode = PictureBoxSizeMode.Zoom;
+            pctVida2.TabIndex = 7;
+            pctVida2.TabStop = false;
+            // 
+            // pctVida3
+            // 
+            pctVida3.BackColor = Color.Transparent;
+            pctVida3.Image = Properties.Resources.pixel_heart;
+            pctVida3.Location = new Point(503, 4);
+            pctVida3.Name = "pctVida3";
+            pctVida3.Size = new Size(41, 40);
+            pctVida3.SizeMode = PictureBoxSizeMode.Zoom;
+            pctVida3.TabIndex = 8;
+            pctVida3.TabStop = false;
             // 
             // frmJuego
             // 
@@ -199,7 +212,9 @@
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackgroundImage = Properties.Resources.fondo;
             ClientSize = new Size(920, 550);
-            Controls.Add(lblVida);
+            Controls.Add(pctVida3);
+            Controls.Add(pctVida2);
+            Controls.Add(pctVida1);
             Controls.Add(lblDificultad);
             Controls.Add(panel);
             Controls.Add(lblScore);
@@ -213,7 +228,9 @@
             ((System.ComponentModel.ISupportInitialize)pctNave).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel.ResumeLayout(false);
-            panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pctVida1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctVida2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctVida3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -228,9 +245,10 @@
         private Button btnReanudar;
         private Button btnReiniciar;
         private Label lblPausa;
-        private Label lblPuntos;
         private Label lblPlayer;
         private Label lblDificultad;
-        private Label lblVida;
+        private PictureBox pctVida1;
+        private PictureBox pctVida2;
+        private PictureBox pctVida3;
     }
 }

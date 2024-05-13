@@ -88,11 +88,9 @@ namespace pryValdezLP2
                     command.ExecuteNonQuery();
 
                 }
-
             } 
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }

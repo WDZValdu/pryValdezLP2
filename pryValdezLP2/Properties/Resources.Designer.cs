@@ -123,6 +123,16 @@ namespace pryValdezLP2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Explocion_nave_ {
+            get {
+                object obj = ResourceManager.GetObject("Explocion nave ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo {
             get {
                 object obj = ResourceManager.GetObject("fondo", resourceCulture);
@@ -146,6 +156,16 @@ namespace pryValdezLP2.Properties {
         internal static System.Drawing.Bitmap NaveSinFondo {
             get {
                 object obj = ResourceManager.GetObject("NaveSinFondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixel_heart {
+            get {
+                object obj = ResourceManager.GetObject("pixel-heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

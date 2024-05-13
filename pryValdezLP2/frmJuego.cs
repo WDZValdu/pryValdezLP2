@@ -23,6 +23,7 @@ namespace pryValdezLP2
         clsEnemigos objEnemigos = new clsEnemigos();
         clsConexionBD objConexion = new clsConexionBD();
         public bool escape = false;
+        public bool expl = false;
         Int32 Score = 0; 
         //Int32 Vel =0;
 
@@ -37,9 +38,10 @@ namespace pryValdezLP2
             timerBola.Start();
             timerBola.Interval = 2;
             timerBola.Tick += TimerBola_Tick;
-            lblPlayer.Text = NamePlayer + " :";
+            lblPlayer.Text = NamePlayer + " :" + Score;
+
             colisionNave();
-            lblVida.Text = "Vidas: " + objPlayer.Vidas;
+            
         }
 
         public void colisionNave()
@@ -55,33 +57,72 @@ namespace pryValdezLP2
                     if (pctNave.Bounds.IntersectsWith(Enemigo.Bounds))
                     {                   
                         objPlayer.Vidas -= 1;
+                        Explosion(Enemigo.Location.X + 30, Enemigo.Location.Y);
                         Enemigo.Visible = false;
                         objEnemigos.listaEnemigos.Remove(Enemigo);
                         Enemigo.Dispose();
-                        lblVida.Text= "Vidas: " + objPlayer.Vidas;
+
                         
+                        switch (objPlayer.Vidas)
+                        {
+                            case 0:
+                                pctVida3.Visible = false;
+                                pctVida2.Visible = false;
+                                pctVida1.Visible = false;
+                                break;
+                            case 1 :
+
+                                pctVida3.Visible = false;
+                                pctVida2.Visible = false;
+                                break;
+                            case 2:
+                                pctVida3.Visible = false; 
+                                break;
+                        }
+
                         if (objPlayer.Vidas <=0)
                         {
-                            
-                            panel.BringToFront();
-                            timerBola.Stop();
-                            timerEnemigos.Stop();
-                            objEnemigos.timerEnemigos.Stop();
-                            objPlayer.timerBola.Stop();
-                            escape = true;
-                            lblPausa.Text="GAME OVER";
-                            panel.Visible = true;
-                            btnReanudar.Enabled = false;
-                            //cargo un registro en la base
-                            objConexion.CargarScore(NamePlayer,Score);
+                            ExplNave();
+                           if (expl == true)
+                           {
+                                panel.BringToFront();
+                                timerBola.Stop();
+                                timerEnemigos.Stop();
+                                objEnemigos.timerEnemigos.Stop();
+                                objPlayer.timerBola.Stop();
+                                escape = true;
+                                lblPausa.Text="GAME OVER";
+                                panel.Visible = true;
+                                btnReanudar.Enabled = false;
+                                expl = false;
+                                //cargo un registro en la base
+                                objConexion.CargarScore(NamePlayer,Score);
 
+                                MessageBox.Show("Sin Vida, puntaje guardado");                             
+                           }
                             
-                            MessageBox.Show("Sin Vida, puntaje guardado");
                         }
                     }
                 }
             };
             timerColision.Start();
+        }
+
+        private void ExplNave()
+        {
+            pctNave.Image = pryValdezLP2.Properties.Resources.Explocion_nave_;
+            System.Windows.Forms.Timer timerExplosionNave = new System.Windows.Forms.Timer();
+            timerExplosionNave.Interval = 1000;
+            timerExplosionNave.Tick += (sender, arges) =>
+            {
+                this.Controls.Remove(pctNave);
+                pctNave.Dispose();
+                
+                timerExplosionNave.Stop();
+            };
+            timerExplosionNave.Start();
+            expl = true;
+
         }
 
         private void timerEnemigos_Tick(object sender, EventArgs e)
@@ -142,7 +183,8 @@ namespace pryValdezLP2
                             Score += 1;
                             //Vel += 500;
                             lblScore.Text = "Score: " + Score.ToString();
-                            lblPuntos.Text = Score.ToString();
+                            lblPlayer.Text = NamePlayer + " : " + Score;
+
                             if (timerEnemigos.Interval > 100)
                             {
                                 timerEnemigos.Interval -= 75;

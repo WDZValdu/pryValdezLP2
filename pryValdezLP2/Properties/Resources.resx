@@ -124,20 +124,26 @@
   <data name="c0bec54a325111bd19f3b0b12c9edbcf (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\c0bec54a325111bd19f3b0b12c9edbcf (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pxsprite-space" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pxsprite-space.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3iCN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3iCN.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="c0bec54a325111bd19f3b0b12c9edbcf (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\c0bec54a325111bd19f3b0b12c9edbcf (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Enemigo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Enemigo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fxVE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fxVE.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Disparo (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Disparo (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pxsprite-space" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pxsprite-space.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Enemigo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Enemigo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Explocion nave " type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Explocion nave .gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NaveSinFondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NaveSinFondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,7 +151,7 @@
   <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fxVE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fxVE.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pixel-heart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pixel-heart.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
